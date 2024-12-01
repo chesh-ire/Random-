@@ -1,0 +1,59 @@
+-- The below are the steps to add a file/folder to a remote GitHub repository --
+
+1. Create a folder on your Desktop.
+2. Open the Command Prompt (CMD) in that particular folder path.
+3. >> git init   (Initialization of empty git repository)
+4. Create a <filename.extension> (i.e. demo.txt) in that folder (add some content of your choice).
+5. Save the file.
+6. >> git add .
+7. >> git commit -m "Done"
+8. >> git config --global user.name "GitHub profile name"
+9. >> git config --global user.email "email ID"
+10. >> git push
+11. >> git remote add <filename.extension> <GitHub repository URL>
+12. >> git push <filename.extension>
+13. >> git push --set-upstream <filename.extension> master
+
+
+-- Some basic commands are used for creating and deleting the branches --
+
+1. >> git branch  (lists the existing branches on the git repository.)
+2. >> git checkout -b <branch name>  (used for the creation of a new branch and switching to it.)
+3. >> git branch <branch name>   (creating a new branch.)
+4. >> git checkout <branch name> (switching between the branches.)
+5. >> git branch -m <new branch name>  (for renaming the existing branch.)
+    NOTE: For the above command you should be on the same branch that you want to rename, use " git checkout" for switching,
+6. >> ls   (lists all the files and folders in the existing repository.)
+7. >> cat <filename.extension>  (for reading the contents of the file.)
+
+
+-- fork, merge, diff, merge conflict pull request concepts on repository using GitHub --
+
+1. Git Fork (A fork is a rough copy of a repository.)
+2. >> git merge master (In Git, the merging is a procedure to connect the forked history.)
+3. >> git diff (It compares the different versions of data sources.)
+4. >> git pull (It is used to pull a repository.)
+
+--------------------------------------------------------------------------------------------------------------------------------
+STEPS:
+1. Create an empty GitHub repository.
+2. Add a README.md and a Sample.txt file with some lines of text (i.e. 2 to 3 lines).
+3. Clone the repository into the local machine.
+    $ git clone <url>
+4. Create a new branch
+    $ git branch <new branch name>
+5. Navigate to the new branch created
+    $ git checkout <new branch name>
+6. Make some changes to the file and push it to the new branch that has been created.
+    $ git add . 
+    $ git commit -m "commit msg"
+    $ git push -u origin <new branch name>
+7. Navigate back to the "main" branch
+    $ git checkout main
+8. Make some changes to the file and push it to the main branch.
+    $ git add . 
+    $ git commit -m "some msg"
+    $ git push -u origin main
+9. Now if you try to merge the file from the new branch by clicking on >> compare & pull. It will give you "Merge conflict".
+10. Resolve the conflict and click on >> commit & merge.
+11. Later click on >> merge pull request -> confirm merge.
