@@ -1,0 +1,29 @@
+`Dockerfile`
+# Use a base image with Java pre-installed
+FROM openjdk:11-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy your application files into the image
+COPY . /app
+
+# Compile the Java program
+RUN javac HelloWorld.java
+
+# Command to run the application
+CMD ["java", "HelloWorld"]
+
+`HelloWorld.java `
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Docker!");
+    }
+}
+
+terminal commands : 
+javac HelloWorld.java
+java  HelloWorld.java 
+docker build -t HelloWorld .
+docker run HelloWorld
+
